@@ -31,11 +31,11 @@
       <div class="hero-bg"></div>
       <div class="hero-content">
         <h1 class="hero-title">
-          <span class="hero-title-main">LUNA</span>
+          <span class="hero-title-main">ЛУНА</span>
           <span class="hero-title-underline"></span>
         </h1>
         <p class="hero-subtitle">Авторские изделия ручной работы</p>
-        <a href="#works" class="btn">СМОТРЕТЬ РАБОТЫ</a>
+        <a href="#works" class="btn">СМОТРЕТЬ КАТАЛОГ</a>
       </div>
     </section>
 
@@ -43,107 +43,24 @@
     <section id="works" class="section">
       <div class="container">
         <h2>Мои работы</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-1"></div>
-            <div class="portfolio-info">
-              <h3>Подставка "СЕРДЦЕ"</h3>
-              <p class="description">Гипс, ручная работа</p>
-              <p class="price">250 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-2"></div>
-            <div class="portfolio-info">
-              <h3>Подставка "ЛИСТ ГИНКО"</h3>
-              <p class="description">Гипс, ручная работа</p>
-              <p class="price">300 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-3"></div>
-            <div class="portfolio-info">
-              <h3>Подставка "ЧЕРЕПАХА"</h3>
-              <p class="description">Гипс, ручная работа</p>
-              <p class="price">350 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-4"></div>
-            <div class="portfolio-info">
-              <h3>КОНТЕЙНЕРНАЯ СВЕЧА</h3>
-              <p class="description">100% соевый воск</p>
-              <p class="volume">Объем 50 мл</p>
-              <p class="price">250 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-5"></div>
-            <div class="portfolio-info">
-              <h3>КОНТЕЙНЕРНАЯ СВЕЧА</h3>
-              <p class="description">100% соевый воск</p>
-              <p class="volume">Объем 190 мл</p>
-              <p class="price">550 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-6"></div>
-            <div class="portfolio-info">
-              <h3>КОНТЕЙНЕРНАЯ СВЕЧА</h3>
-              <p class="description">100% соевый воск</p>
-              <p class="volume">Объем 100 мл</p>
-              <p class="price">350 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-7"></div>
-            <div class="portfolio-info">
-              <h3>Шкатулка</h3>
-              <p class="description">Гипс, ручная работа</p>
-              <p class="price">250 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-8"></div>
-            <div class="portfolio-info">
-              <h3>Шкатулка с сердечками</h3>
-              <p class="description">Гипс, ручная работа</p>
-              <p class="price">350 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-9"></div>
-            <div class="portfolio-info">
-              <h3>Шкатулка "СЕРДЦЕ"</h3>
-              <p class="description">Гипс, ручная работа</p>
-              <p class="price">250 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-10"></div>
-            <div class="portfolio-info">
-              <h3>Свеча "ВЛЮБЛЕННЫЕ"</h3>
-              <p class="description">100% соевый воск</p>
-              <p class="price">350 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-11"></div>
-            <div class="portfolio-info">
-              <h3>Свеча "ГАЙЯ"</h3>
-              <p class="description">100% соевый воск</p>
-              <p class="price">550 ₽</p>
-            </div>
-          </div>
-          <div class="portfolio-item">
-            <div class="portfolio-img portfolio-img-12"></div>
-            <div class="portfolio-info">
-              <h3>Свеча "УСТРИЦА"</h3>
-              <p class="description">100% соевый воск</p>
-              <p class="price">500 ₽</p>
-            </div>
-          </div>
+
+        <!-- Кнопки фильтров -->
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">Все</button>
+          <button class="filter-btn" data-filter="container-candles">
+            Контейнерные свечи
+          </button>
+          <button class="filter-btn" data-filter="molded-candles">
+            Формовые свечи
+          </button>
+          <button class="filter-btn" data-filter="stands">Подставки</button>
+          <button class="filter-btn" data-filter="boxes">Шкатулки</button>
+          <button class="filter-btn" data-filter="vases">Вазы</button>
+          <button class="filter-btn" data-filter="planters">Кашпо</button>
         </div>
+
+        <!-- Сетка с работами -->
+        <div class="portfolio-grid" id="works-grid"></div>
       </div>
     </section>
 
@@ -161,27 +78,27 @@
           <div class="about-content">
             <h3>Привет, я Анастасия</h3>
             <p>
-              Я создаю атмосферу уюта и вдохновения с помощью свечей и декоративных
-              изделий из гипса. Уже много лет я занимаюсь изготовлением уникальных свечей
-              из натурального соевого воска.
+              Вот уже много лет я создаю для вас атмосферу удовольствия, тепла,
+              нежности и вдохновения.
             </p>
             <p>
-              Эти свечи славятся высоким качеством, долгим горением и красивым внешним
-              видом. Каждая из них дарит ощущение тепла и комфорта, наполняет дом гармонией
-              и уютом.
+              Моя работа – изготовление свечей из натурального соевого воска,
+              которые отличаются качеством, высокой длительностью горения и
+              привлекательным дизайном. Они подарят комфорт, наполнят
+              пространство гармонией и уютом.
             </p>
             <p>
-              Кроме того, я создаю гипсовые изделия, воплощающие оригинальность и
-              утонченность. Каждое из них — результат моей работы, уникальное произведение
-              искусства, которое станет украшением интерьера и добавит ему нотку
-              очарования.
+              Также, я создаю современные гипсовые изделия, каждое из которых –
+              произведение искусства, которое подарит особый шарм и нотку
+              очарования интерьеру. Я ценю надежность и качество, поэтому мои
+              работы изготавливаются вручную с заботой и вниманием к каждой
+              детали.
             </p>
             <p>
-              Вся моя продукция изготавливается вручную с любовью и вниманием к деталям.
-              Я уверена, что мои работы найдут отклик у тех, кто ценит настоящее искусство
-              и качество.
+              Уверена, что мой продукт подойдёт вам как истинному поклоннику
+              интерьерного искусства, современного стиля и созидания.
             </p>
-            <p>Благодарю за доверие и внимание к моему творчеству.</p>
+            <p>Спасибо за ваш интерес к моему творчеству.</p>
           </div>
         </div>
       </div>
@@ -197,21 +114,18 @@
             </div>
             <h4>Натуральный воск</h4>
           </div>
-
           <div class="benefit-item">
             <div class="benefit-icon png-icon">
               <img src="assets/handmade.png" alt="Ручная работа" />
             </div>
             <h4>Ручная работа</h4>
           </div>
-
           <div class="benefit-item">
             <div class="benefit-icon png-icon">
               <img src="assets/present.png" alt="Подарочная упаковка" />
             </div>
             <h4>Подарочная упаковка</h4>
           </div>
-
           <div class="benefit-item">
             <div class="benefit-icon png-icon">
               <img src="assets/delivery.png" alt="Доставка по РФ" />
@@ -259,10 +173,47 @@
 
     <!-- ПОДВАЛ -->
     <footer class="footer">
-      <div class="container">© 2026 LUNA</div>
+      <div class="container">© 2026 ЛУНА</div>
     </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div id="workModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <div class="modal-image" id="modalImage"></div>
+          <div class="modal-info">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription" class="modal-description"></p>
+            
+            <!-- Детальная информация -->
+            <div class="modal-details">
+              <div class="detail-item">
+                <span class="detail-label">Материал:</span>
+                <span class="detail-value" id="modalMaterial"></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Объем/Размер:</span>
+                <span class="detail-value" id="modalVolume"></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Аромат:</span>
+                <span class="detail-value" id="modalScent"></span>
+              </div>
+            </div>
+            
+            <!-- Особенности (теги) -->
+            <div class="modal-features" id="modalFeatures"></div>
+            
+            <!-- КНОПКА ЗАКАЗА -->
+            <button class="modal-order-btn" id="orderNowBtn">ЗАКАЗАТЬ</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
 </html>
+
 
