@@ -98,6 +98,7 @@ h2:hover::after {
    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
    filter: drop-shadow(0 2px 4px rgba(139, 122, 107, 0.2));
    animation: logoAppear 0.8s ease-out;
+   padding: 12px 0;
 }
 
 .logo:hover .logo-img {
@@ -170,7 +171,7 @@ h2:hover::after {
    width: 100%;
 }
 
-/* ГЕРОЙ - БЕЗ ПАРАЛЛАКСА */
+/* ГЕРОЙ */
 .hero {
    height: 100vh;
    min-height: 600px;
@@ -314,7 +315,68 @@ h2:hover::after {
    left: 0;
 }
 
-/* ПОРТФОЛИО */
+/* ФИЛЬТРЫ */
+.filter-container {
+   display: flex;
+   justify-content: center;
+   gap: 12px;
+   margin: 30px 0 50px;
+   flex-wrap: wrap;
+   padding: 0 10px;
+}
+
+.filter-btn {
+   padding: 10px 20px;
+   background: transparent;
+   border: 2px solid #8b7a6b;
+   color: #2c2c2c;
+   font-family: 'Inter', sans-serif;
+   font-size: 0.95rem;
+   font-weight: 500;
+   letter-spacing: 0.03em;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   border-radius: 30px;
+   white-space: nowrap;
+}
+
+.filter-btn::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: #8b7a6b;
+   transition: left 0.3s ease;
+   z-index: -1;
+}
+
+.filter-btn:hover {
+   color: white;
+   transform: translateY(-2px);
+   box-shadow: 0 4px 10px rgba(139, 122, 107, 0.3);
+}
+
+.filter-btn:hover::before {
+   left: 0;
+}
+
+.filter-btn.active {
+   background: #8b7a6b;
+   color: white;
+   border-color: #8b7a6b;
+   box-shadow: 0 4px 10px rgba(139, 122, 107, 0.3);
+}
+
+.filter-btn.active::before {
+   display: none;
+}
+
+/* ПОРТФОЛИО - КАРТОЧКИ */
 .portfolio-grid {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -332,6 +394,9 @@ h2:hover::after {
    animation-fill-mode: both;
    animation-delay: calc(var(--item-index, 0) * 0.1s);
    text-align: center;
+   cursor: pointer;
+   position: relative;
+   overflow: hidden;
 }
 
 .portfolio-item:nth-child(1) { --item-index: 1; }
@@ -357,6 +422,52 @@ h2:hover::after {
    box-shadow: 0 20px 40px rgba(139, 122, 107, 0.1);
 }
 
+/* Затемнение при наведении */
+.portfolio-item::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   opacity: 0;
+   transition: opacity 0.3s ease;
+   z-index: 5;
+   pointer-events: none;
+}
+
+.portfolio-item:hover::before {
+   opacity: 1;
+}
+
+/* Кнопка ПОДРОБНЕЕ по центру */
+.portfolio-item .hover-btn {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0.8);
+   background: white;
+   color: #8b7a6b;
+   padding: 12px 25px;
+   border-radius: 40px;
+   font-size: 1rem;
+   font-weight: 600;
+   letter-spacing: 1px;
+   opacity: 0;
+   transition: all 0.3s ease;
+   z-index: 10;
+   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+   border: 2px solid #8b7a6b;
+   white-space: nowrap;
+   pointer-events: none;
+}
+
+.portfolio-item:hover .hover-btn {
+   opacity: 1;
+   transform: translate(-50%, -50%) scale(1);
+}
+
 .portfolio-img {
    width: 100%;
    aspect-ratio: 4/5;
@@ -370,18 +481,38 @@ h2:hover::after {
    transform: scale(1.03);
 }
 
+/* КЛАССЫ ДЛЯ ФОТО - СТРУКТУРИРОВАНЫ ПО ПОРЯДКУ */
+/* Подставки */
 .portfolio-img-1 { background-image: url('images/heart.JPG'); }
 .portfolio-img-2 { background-image: url('images/footstand.png'); }
 .portfolio-img-3 { background-image: url('images/tortless.JPG'); }
+
+/* Контейнерные свечи */
 .portfolio-img-4 { background-image: url('images/candle_1.JPG'); }
 .portfolio-img-5 { background-image: url('images/candle_2.JPG'); }
 .portfolio-img-6 { background-image: url('images/candle_3.JPG'); }
-.portfolio-img-7 { background-image: url('images/Box_1.png'); }
+
+/* Шкатулки */
+.portfolio-img-7 { background-image: url('images/Box_1.JPG'); }
 .portfolio-img-8 { background-image: url('images/Box_2.JPG'); }
 .portfolio-img-9 { background-image: url('images/Box_3.JPG'); }
+
+/* Формовые свечи (первые 3) */
 .portfolio-img-10 { background-image: url('images/Candle_10.JPG'); }
 .portfolio-img-11 { background-image: url('images/Candle_11.png'); }
 .portfolio-img-12 { background-image: url('images/Candle_12.JPG'); }
+
+/* Новые товары (по порядку добавления) */
+.portfolio-img-13 { background-image: url('images/Candle_4.JPG'); }      /* Свеча "ЗЕФИРКА" */
+.portfolio-img-14 { background-image: url('images/Bubble.png'); }        /* Подставка "BUBBLE" */
+.portfolio-img-15 { background-image: url('images/Cashpo_1.JPG'); }      /* Кашпо "РАКУШКА СПИРАЛЬ" */
+.portfolio-img-16 { background-image: url('images/Cashpo_2.JPG'); }      /* Кашпо "РАКУШКА КОРАЛЛ" */
+.portfolio-img-17 { background-image: url('images/Candle_5.JPG'); }      /* Свеча "КРУАССАН" */
+.portfolio-img-18 { background-image: url('images/Box_4.JPG'); }         /* Шкатулка "ТЫКВА" */
+.portfolio-img-19 { background-image: url('images/Cloud.JPG'); }         /* Подставка "ОБЛАКО" */
+.portfolio-img-20 { background-image: url('images/Vase.JPG'); }          /* Ваза "МОДУЛЬНАЯ" */
+.portfolio-img-21 { background-image: url('images/Vase_2.JPG'); }        /* Ваза "СФЕРА" */
+.portfolio-img-22 { background-image: url('images/Vase_3.JPG'); }        /* Ваза "РЕЛЬЕФНАЯ" */
 
 .portfolio-info {
    padding: 25px 20px 25px;
@@ -427,19 +558,9 @@ h2:hover::after {
    opacity: 1;
 }
 
+/* Убираем объем с главной */
 .portfolio-info .volume {
-   color: #8b7a6b;
-   font-size: 1rem;
-   font-weight: 500;
-   margin: 5px 0 3px;
-   display: inline-block;
-   letter-spacing: 0.3px;
-   transition: all 0.3s ease;
-}
-
-.portfolio-item:hover .volume {
-   color: #6b5a4b;
-   transform: scale(1.05);
+   display: none;
 }
 
 .price {
@@ -667,40 +788,6 @@ h2:hover::after {
    color: #8b7a6b;
 }
 
-.benefit-item p {
-   color: #777;
-   font-size: 0.85rem;
-   margin: 0;
-   line-height: 1.4;
-   max-width: 180px;
-   transition: color 0.3s;
-}
-
-.benefit-item:hover p {
-   color: #555;
-}
-
-/* ПОДВАЛ */
-.footer {
-   padding: 40px 0 35px;
-   border-top: 1px solid rgba(139, 122, 107, 0.2);
-   font-size: 1rem;
-   color: #8b7a6b;
-   text-align: center;
-   background-color: transparent;
-   letter-spacing: 0.3px;
-   font-weight: 300;
-}
-
-.footer .container {
-   opacity: 0.9;
-   transition: opacity 0.3s ease;
-}
-
-.footer:hover .container {
-   opacity: 1;
-}
-
 /* КОНТАКТЫ */
 .contacts {
    background-color: transparent;
@@ -853,47 +940,17 @@ h2:hover::after {
    transform: rotate(45deg);
 }
 
-.social-link::after {
-   content: '';
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   border-radius: 50%;
-   background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-   opacity: 0;
-   transform: scale(0.5);
-   transition: all 0.3s ease;
-}
-
 .social-link:hover::before {
    opacity: 1;
    animation: shine 1.2s ease;
 }
 
-.social-link:hover::after {
-   opacity: 1;
-   transform: scale(1.5);
-   animation: particleFloat 1s ease-out;
+.social-link.telegram {
+   background: linear-gradient(45deg, #1e96c8, #37aee2);
 }
 
-@keyframes shine {
-   0% { left: -50%; top: -50%; opacity: 0; }
-   50% { opacity: 1; }
-   100% { left: 150%; top: 150%; opacity: 0; }
-}
-
-@keyframes particleFloat {
-   0% { opacity: 0.8; transform: scale(0.5); }
-   100% { opacity: 0; transform: scale(2); }
-}
-
-.social-link:hover svg {
-   animation: spin 0.6s ease;
-}
-
-@keyframes spin {
-   from { transform: rotate(0deg); }
-   to { transform: rotate(360deg); }
+.social-link.vk {
+   background: linear-gradient(45deg, #45668e, #6287b8);
 }
 
 .social-link:hover {
@@ -911,18 +968,222 @@ h2:hover::after {
    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
 }
 
-.social-link.telegram {
-   background: linear-gradient(45deg, #1e96c8, #37aee2);
+/* ПОДВАЛ */
+.footer {
+   padding: 40px 0 35px;
+   border-top: 1px solid rgba(139, 122, 107, 0.2);
+   font-size: 1rem;
+   color: #8b7a6b;
+   text-align: center;
+   background-color: transparent;
+   letter-spacing: 0.3px;
+   font-weight: 300;
 }
 
-.social-link.vk {
-   background: linear-gradient(45deg, #45668e, #6287b8);
+.footer .container {
+   opacity: 0.9;
+   transition: opacity 0.3s ease;
+}
+
+.footer:hover .container {
+   opacity: 1;
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+.modal {
+   display: none;
+   position: fixed;
+   z-index: 1000;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.9);
+   overflow-y: auto;
+   animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+   from { opacity: 0; }
+   to { opacity: 1; }
+}
+
+.modal-content {
+   position: relative;
+   background: white;
+   margin: 50px auto;
+   padding: 30px;
+   max-width: 1000px;
+   width: 90%;
+   animation: modalSlideDown 0.4s ease;
+   box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+   border-radius: 12px;
+}
+
+@keyframes modalSlideDown {
+   from { transform: translateY(-50px); opacity: 0; }
+   to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+   position: absolute;
+   right: 20px;
+   top: 10px;
+   font-size: 40px;
+   font-weight: 300;
+   color: #8b7a6b;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   line-height: 1;
+   z-index: 10;
+}
+
+.close-modal:hover {
+   color: #2c2c2c;
+   transform: scale(1.2) rotate(90deg);
+}
+
+.modal-body {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 30px;
+   margin-top: 10px;
+}
+
+.modal-image {
+   width: 100%;
+   aspect-ratio: 4/5;
+   background-size: cover;
+   background-position: center;
+   background-color: #f2eeea;
+   box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+   border-radius: 8px;
+}
+
+.modal-info {
+   padding: 10px 0;
+}
+
+.modal-info h3 {
+   font-size: 2rem;
+   font-weight: 400;
+   margin-bottom: 15px;
+   color: #2c2c2c;
+   position: relative;
+   display: inline-block;
+}
+
+.modal-info h3::after {
+   content: '';
+   position: absolute;
+   bottom: -10px;
+   left: 0;
+   width: 60px;
+   height: 3px;
+   background-color: #8b7a6b;
+   transition: width 0.4s ease;
+}
+
+.modal-info:hover h3::after {
+   width: 100%;
+}
+
+.modal-description {
+   font-size: 1.1rem;
+   color: #666;
+   margin-bottom: 20px;
+   line-height: 1.6;
+   font-style: italic;
+   padding-bottom: 15px;
+   border-bottom: 1px dashed #ddd;
+}
+
+/* Детальная информация в модалке */
+.modal-details {
+   background: #f9f6f2;
+   padding: 15px;
+   border-radius: 12px;
+   margin-bottom: 20px;
+}
+
+.detail-item {
+   display: flex;
+   margin-bottom: 8px;
+   padding-bottom: 8px;
+   border-bottom: 1px solid rgba(139, 122, 107, 0.1);
+   font-size: 0.95rem;
+}
+
+.detail-item:last-child {
+   border-bottom: none;
+   margin-bottom: 0;
+   padding-bottom: 0;
+}
+
+.detail-label {
+   flex: 0 0 100px;
+   font-weight: 600;
+   color: #8b7a6b;
+}
+
+.detail-value {
+   flex: 1;
+   color: #444;
+}
+
+/* Особенности (теги) */
+.modal-features {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin-bottom: 25px;
+}
+
+.modal-features span {
+   background: #f2eeea;
+   padding: 5px 12px;
+   border-radius: 20px;
+   font-size: 0.85rem;
+   color: #555;
+   border: 1px solid rgba(139, 122, 107, 0.2);
+}
+
+/* Кнопка заказа */
+.modal-order-btn {
+   display: inline-block;
+   padding: 14px 25px;
+   background-color: #8b7a6b;
+   color: white;
+   text-decoration: none;
+   border-radius: 40px;
+   font-size: 1rem;
+   font-weight: 500;
+   letter-spacing: 0.5px;
+   transition: all 0.3s ease;
+   box-shadow: 0 5px 15px rgba(139, 122, 107, 0.3);
+   width: 100%;
+   text-align: center;
+   border: none;
+   cursor: pointer;
+   margin-top: 10px;
+}
+
+.modal-order-btn:hover {
+   background-color: #6b5a4b;
+   transform: translateY(-3px);
+   box-shadow: 0 8px 25px rgba(139, 122, 107, 0.4);
 }
 
 /* АНИМАЦИИ */
 @keyframes logoAppear {
    from { opacity: 0; transform: scale(0.8); }
    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shine {
+   0% { left: -50%; top: -50%; opacity: 0; }
+   50% { opacity: 1; }
+   100% { left: 150%; top: 150%; opacity: 0; }
 }
 
 /* АДАПТАЦИЯ */
@@ -979,6 +1240,11 @@ h2:hover::after {
        margin-bottom: 1.5rem;
    }
    
+   .btn {
+       padding: 12px 40px;
+       font-size: 0.9rem;
+   }
+   
    .about-grid { 
        grid-template-columns: 1fr; 
        gap: 30px; 
@@ -1007,6 +1273,15 @@ h2:hover::after {
        grid-template-columns: 1fr; 
    }
    
+   .filter-container {
+       gap: 8px;
+   }
+   
+   .filter-btn {
+       padding: 8px 15px;
+       font-size: 0.85rem;
+   }
+   
    .contacts {
        padding: 35px 0;
    }
@@ -1026,9 +1301,53 @@ h2:hover::after {
        height: 26px;
    }
    
+   .modal-body {
+       grid-template-columns: 1fr;
+       gap: 20px;
+   }
+   
+   .modal-content {
+       margin: 20px auto;
+       padding: 20px;
+   }
+   
+   .modal-info h3 {
+       font-size: 1.8rem;
+   }
+   
+   .detail-item {
+       flex-direction: column;
+       gap: 3px;
+   }
+   
+   .detail-label {
+       flex: none;
+   }
+   
    .footer {
        padding: 30px 0 25px;
        font-size: 0.95rem;
+   }
+}
+
+@media (max-width: 600px) {
+   .filter-container {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 8px;
+   }
+   
+   .filter-btn {
+       width: 100%;
+       white-space: normal;
+       text-align: center;
+       font-size: 0.8rem;
+       padding: 8px 5px;
+   }
+   
+   .portfolio-item .hover-btn {
+       padding: 8px 15px;
+       font-size: 0.9rem;
    }
 }
 
@@ -1106,9 +1425,19 @@ h2:hover::after {
        height: 22px;
    }
    
+   .modal-info h3 {
+       font-size: 1.5rem;
+   }
+   
    .footer {
        padding: 25px 0 20px;
        font-size: 0.9rem;
+   }
+}
+
+@media (max-width: 380px) {
+   .filter-container {
+       grid-template-columns: 1fr;
    }
 }
 
@@ -1128,5 +1457,10 @@ h2:hover::after {
    
    .price::before {
        width: 30px;
+   }
+   
+   .portfolio-item .hover-btn {
+       padding: 6px 12px;
+       font-size: 0.8rem;
    }
 }
