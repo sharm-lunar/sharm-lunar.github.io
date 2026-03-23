@@ -117,7 +117,7 @@ h2::after {
    border-bottom-color: #8b7a6b;
 }
 
-/* ========== ГЕРОЙ С АДАПТИВНЫМ ИЗОБРАЖЕНИЕМ ========== */
+/* ========== ГЕРОЙ С ОДНИМ ИЗОБРАЖЕНИЕМ ========== */
 .hero {
    height: 100vh;
    min-height: 500px;
@@ -142,12 +142,6 @@ h2::after {
    overflow: hidden;
 }
 
-.hero-bg picture {
-   width: 100%;
-   height: 100%;
-   display: block;
-}
-
 .hero-img {
    width: 100%;
    height: 100%;
@@ -156,16 +150,47 @@ h2::after {
    display: block;
 }
 
-/* Корректировка фокуса изображения для разных устройств */
-@media (max-width: 480px) {
-   .hero-img {
-       object-position: 50% center;
+/* ЛОГОТИП ПОВЕРХ HERO */
+.hero-logo {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   width: 80%;
+   max-width: 400px;
+   text-align: center;
+   pointer-events: none;
+}
+
+.hero-logo-img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* Адаптация логотипа для разных устройств */
+@media (max-width: 1024px) {
+   .hero-logo {
+       width: 70%;
+       max-width: 350px;
+       top: 45%;
    }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-   .hero-img {
-       object-position: 60% center;
+@media (max-width: 768px) {
+   .hero-logo {
+       width: 60%;
+       max-width: 280px;
+       top: 40%;
+   }
+}
+
+@media (max-width: 480px) {
+   .hero-logo {
+       width: 70%;
+       max-width: 220px;
+       top: 35%;
    }
 }
 
@@ -553,6 +578,14 @@ h2::after {
    color: #8b7a6b;
    text-align: center;
    width: 100%;
+}
+
+/* ========== ПРОСТЫЕ РАЗДЕЛИТЕЛИ МЕЖДУ СЕКЦИЯМИ ========== */
+.section-divider {
+   width: 100%;
+   height: 1px;
+   background: linear-gradient(90deg, transparent, #8b7a6b, #8b7a6b, transparent);
+   margin: 0 auto;
 }
 
 /* МОДАЛЬНОЕ ОКНО */
