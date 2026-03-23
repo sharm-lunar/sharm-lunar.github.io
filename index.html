@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LUNA HOMEMADE | Ручная работа</title>
@@ -8,212 +8,232 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap"
-      rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap"
+        rel="stylesheet"
     />
-  </head>
-  <body>
+</head>
+<body>
     <header class="header">
-      <div class="container">
-        <a href="/" class="logo">
-          <img src="assets/logo.png" alt="LUNA HOMEMADE" class="logo-img" />
-        </a>
-        <nav class="nav">
-          <a href="#works" class="nav-link">Работы</a>
-          <a href="#about" class="nav-link">О себе</a>
-          <a href="#contacts" class="nav-link">Контакты</a>
-        </nav>
-      </div>
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="assets/logo.png" alt="LUNA HOMEMADE" class="logo-img" />
+            </a>
+            <nav class="nav">
+                <a href="#works" class="nav-link">Работы</a>
+                <a href="#about" class="nav-link">О себе</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- ГЕРОЙ -->
+    <!-- ГЕРОЙ С АДАПТИВНЫМ ИЗОБРАЖЕНИЕМ -->
     <section class="hero" id="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="hero-title-main">ЛУНА</span>
-          <span class="hero-title-underline"></span>
-        </h1>
-        <p class="hero-subtitle">Авторские изделия ручной работы</p>
-        <a href="#works" class="btn">СМОТРЕТЬ КАТАЛОГ</a>
-      </div>
+        <div class="hero-bg">
+            <picture>
+                <!-- Мобильные устройства (до 480px) -->
+                <source 
+                    media="(max-width: 480px)" 
+                    srcset="images/Hero_image_mobile.png"
+                >
+                <!-- Планшеты (481px - 1024px) -->
+                <source 
+                    media="(max-width: 1024px)" 
+                    srcset="images/Hero_image_table.png"
+                >
+                <!-- Десктопы (1025px и выше) и фолбэк для старых браузеров -->
+                <img 
+                    src="images/Hero_image.png" 
+                    alt="LUNA HOMEMADE - ручная работа, свечи и гипсовые изделия"
+                    class="hero-img"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </picture>
+        </div>
+        <div class="hero-content">
+            <a href="#works" class="btn">СМОТРЕТЬ КАТАЛОГ</a>
+        </div>
     </section>
 
     <!-- ПОРТФОЛИО -->
     <section id="works" class="section">
-      <div class="container">
-        <h2>Мои работы</h2>
+        <div class="container">
+            <h2>Мои работы</h2>
 
-        <!-- Кнопки фильтров -->
-        <div class="filter-container">
-          <button class="filter-btn active" data-filter="all">Все</button>
-          <button class="filter-btn" data-filter="container-candles">
-            Контейнерные свечи
-          </button>
-          <button class="filter-btn" data-filter="molded-candles">
-            Формовые свечи
-          </button>
-          <button class="filter-btn" data-filter="stands">Подставки</button>
-          <button class="filter-btn" data-filter="boxes">Шкатулки</button>
-          <button class="filter-btn" data-filter="vases">Вазы</button>
-          <button class="filter-btn" data-filter="planters">Кашпо</button>
+            <!-- Кнопки фильтров -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="container-candles">
+                    Контейнерные свечи
+                </button>
+                <button class="filter-btn" data-filter="molded-candles">
+                    Формовые свечи
+                </button>
+                <button class="filter-btn" data-filter="stands">Подставки</button>
+                <button class="filter-btn" data-filter="boxes">Шкатулки</button>
+                <button class="filter-btn" data-filter="vases">Вазы</button>
+                <button class="filter-btn" data-filter="planters">Кашпо</button>
+            </div>
+
+            <!-- Сетка с работами -->
+            <div class="portfolio-grid" id="works-grid"></div>
         </div>
-
-        <!-- Сетка с работами -->
-        <div class="portfolio-grid" id="works-grid"></div>
-      </div>
     </section>
 
     <!-- О СЕБЕ -->
     <section id="about" class="section about-bg">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-img">
-            <img
-              src="images/About_me.JPG"
-              alt="Анастасия"
-              class="about-img-full"
-            />
-          </div>
-          <div class="about-content">
-            <h3>Привет, я Анастасия</h3>
-            <p>
-              Вот уже много лет я создаю для вас атмосферу удовольствия, тепла,
-              нежности и вдохновения.
-            </p>
-            <p>
-              Моя работа – изготовление свечей из натурального соевого воска,
-              которые отличаются качеством, высокой длительностью горения и
-              привлекательным дизайном. Они подарят комфорт, наполнят
-              пространство гармонией и уютом.
-            </p>
-            <p>
-              Также, я создаю современные гипсовые изделия, каждое из которых –
-              произведение искусства, которое подарит особый шарм и нотку
-              очарования интерьеру. Я ценю надежность и качество, поэтому мои
-              работы изготавливаются вручную с заботой и вниманием к каждой
-              детали.
-            </p>
-            <p>
-              Уверена, что мой продукт подойдёт вам как истинному поклоннику
-              интерьерного искусства, современного стиля и созидания.
-            </p>
-            <p>Спасибо за ваш интерес к моему творчеству.</p>
-          </div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img
+                        src="images/About_me.JPG"
+                        alt="Анастасия - мастер LUNA HOMEMADE"
+                        class="about-img-full"
+                    />
+                </div>
+                <div class="about-content">
+                    <h3>Привет, я Анастасия</h3>
+                    <p>
+                        Вот уже много лет я создаю для вас атмосферу удовольствия, тепла,
+                        нежности и вдохновения.
+                    </p>
+                    <p>
+                        Моя работа – изготовление свечей из натурального соевого воска,
+                        которые отличаются качеством, высокой длительностью горения и
+                        привлекательным дизайном. Они подарят комфорт, наполнят
+                        пространство гармонией и уютом.
+                    </p>
+                    <p>
+                        Также, я создаю современные гипсовые изделия, каждое из которых –
+                        произведение искусства, которое подарит особый шарм и нотку
+                        очарования интерьеру. Я ценю надежность и качество, поэтому мои
+                        работы изготавливаются вручную с заботой и вниманием к каждой
+                        детали.
+                    </p>
+                    <p>
+                        Уверена, что мой продукт подойдёт вам как истинному поклоннику
+                        интерьерного искусства, современного стиля и созидания.
+                    </p>
+                    <p>Спасибо за ваш интерес к моему творчеству.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ПРЕИМУЩЕСТВА -->
-    <section class="section">
-      <div class="container">
-        <div class="benefits-grid">
-          <div class="benefit-item">
-            <div class="benefit-icon png-icon">
-              <img src="assets/Wax.png" alt="Натуральный воск" />
+    <section class="section" aria-labelledby="benefits-heading">
+        <div class="container">
+            <h2 id="benefits-heading" class="visually-hidden">Наши преимущества</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon png-icon">
+                        <img src="assets/Wax.png" alt="Натуральный воск" />
+                    </div>
+                    <h4>Натуральный воск</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon png-icon">
+                        <img src="assets/handmade.png" alt="Ручная работа" />
+                    </div>
+                    <h4>Ручная работа</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon png-icon">
+                        <img src="assets/present.png" alt="Подарочная упаковка" />
+                    </div>
+                    <h4>Подарочная упаковка</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon png-icon">
+                        <img src="assets/delivery.png" alt="Доставка по РФ" />
+                    </div>
+                    <h4>Доставка по РФ</h4>
+                </div>
             </div>
-            <h4>Натуральный воск</h4>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-icon png-icon">
-              <img src="assets/handmade.png" alt="Ручная работа" />
-            </div>
-            <h4>Ручная работа</h4>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-icon png-icon">
-              <img src="assets/present.png" alt="Подарочная упаковка" />
-            </div>
-            <h4>Подарочная упаковка</h4>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-icon png-icon">
-              <img src="assets/delivery.png" alt="Доставка по РФ" />
-            </div>
-            <h4>Доставка по РФ</h4>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- КОНТАКТЫ -->
     <section id="contacts" class="section contacts">
-      <div class="container">
-        <h2>Контакты</h2>
-        <div class="contacts-text">
-          Хотите приобрести или задать вопрос? Пишите прямо сейчас — я всегда на
-          связи.
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contacts-text">
+                Хотите приобрести или задать вопрос? Пишите прямо сейчас — я всегда на
+                связи.
+            </div>
+            <div class="social-links">
+                <a
+                    href="https://t.me/charm_lunar"
+                    class="social-link telegram"
+                    target="_blank"
+                    aria-label="Написать в Telegram"
+                >
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161l-1.97 9.27c-.146.658-.537.818-1.084.51l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.644-.204-.657-.644.135-.953l11.57-4.458c.537-.194 1.006.128.832.941z"
+                        />
+                    </svg>
+                </a>
+                <a
+                    href="https://vk.com/charm_lunar"
+                    class="social-link vk"
+                    target="_blank"
+                    aria-label="Написать в VK"
+                >
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M15.684 0H8.316C2.827 0 0 2.827 0 8.316v7.368C0 21.173 2.827 24 8.316 24h7.368C21.173 24 24 21.173 24 15.684V8.316C24 2.827 21.173 0 15.684 0zm3.519 16.516h-1.963c-.766 0-.982-.563-2.302-1.877-1.146-1.089-1.641-1.238-1.918-1.238-.392 0-.504.11-.504.653v1.728c0 .467-.152.734-1.36.734-2.008 0-4.235-1.225-5.804-3.507C3.78 10.315 3.184 8.06 3.184 7.217c0-.327.13-.633.543-.633h1.96c.511 0 .696.217.891.738.979 2.717 2.627 5.102 3.302 5.102.25 0 .37-.12.37-.782v-2.99c-.087-1.413-.826-1.533-.826-2.038 0-.25.196-.457.522-.457h3.067c.435 0 .587.217.587.696v3.827c0 .435.174.587.543.587.457 0 .827-.152 1.985-1.353 1.164-1.226 1.985-3.011 1.985-3.011.109-.24.305-.478.674-.478h1.96c.674 0 .826.37.674.913-.218 1.032-2.345 3.665-2.345 3.665-.37.5-.522.717 0 1.271.37.435 1.585 1.531 1.96 2.021.37.457.544.891.109.891z"
+                        />
+                    </svg>
+                </a>
+            </div>
         </div>
-        <div class="social-links">
-          <a
-            href="https://t.me/charm_lunar"
-            class="social-link telegram"
-            target="_blank"
-          >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-              <path
-                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161l-1.97 9.27c-.146.658-.537.818-1.084.51l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.644-.204-.657-.644.135-.953l11.57-4.458c.537-.194 1.006.128.832.941z"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://vk.ru/charm_lunar"
-            class="social-link vk"
-            target="_blank"
-          >
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-              <path
-                d="M15.684 0H8.316C2.827 0 0 2.827 0 8.316v7.368C0 21.173 2.827 24 8.316 24h7.368C21.173 24 24 21.173 24 15.684V8.316C24 2.827 21.173 0 15.684 0zm3.519 16.516h-1.963c-.766 0-.982-.563-2.302-1.877-1.146-1.089-1.641-1.238-1.918-1.238-.392 0-.504.11-.504.653v1.728c0 .467-.152.734-1.36.734-2.008 0-4.235-1.225-5.804-3.507C3.78 10.315 3.184 8.06 3.184 7.217c0-.327.13-.633.543-.633h1.96c.511 0 .696.217.891.738.979 2.717 2.627 5.102 3.302 5.102.25 0 .37-.12.37-.782v-2.99c-.087-1.413-.826-1.533-.826-2.038 0-.25.196-.457.522-.457h3.067c.435 0 .587.217.587.696v3.827c0 .435.174.587.543.587.457 0 .827-.152 1.985-1.353 1.164-1.226 1.985-3.011 1.985-3.011.109-.24.305-.478.674-.478h1.96c.674 0 .826.37.674.913-.218 1.032-2.345 3.665-2.345 3.665-.37.5-.522.717 0 1.271.37.435 1.585 1.531 1.96 2.021.37.457.544.891.109.891z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
     </section>
 
     <!-- ПОДВАЛ -->
     <footer class="footer">
-      <div class="container">© 2026 ЛУНА</div>
+        <div class="container">© 2026 ЛУНА</div>
     </footer>
 
     <!-- МОДАЛЬНОЕ ОКНО -->
-    <div id="workModal" class="modal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body">
-          <div class="modal-image" id="modalImage"></div>
-          <div class="modal-info">
-            <h3 id="modalTitle"></h3>
-            <p id="modalDescription" class="modal-description"></p>
-            
-            <!-- Детальная информация -->
-            <div class="modal-details">
-              <div class="detail-item">
-                <span class="detail-label">Материал:</span>
-                <span class="detail-value" id="modalMaterial"></span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">Объем/Размер:</span>
-                <span class="detail-value" id="modalVolume"></span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">Аромат:</span>
-                <span class="detail-value" id="modalScent"></span>
-              </div>
+    <div id="workModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Закрыть">&times;</span>
+            <div class="modal-body">
+                <img src="" alt="" class="modal-image" id="modalImage">
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    
+                    <!-- Детальная информация -->
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <span class="detail-label" id="volumeLabel">Объем:</span>
+                            <span class="detail-value" id="modalVolume"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Материал:</span>
+                            <span class="detail-value" id="modalMaterial"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Аромат:</span>
+                            <span class="detail-value" id="modalScent"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Цена:</span>
+                            <span class="detail-value" id="modalPrice"></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Особенности (теги) -->
+                    <div class="modal-features" id="modalFeatures"></div>
+                    
+                    <!-- КНОПКА ЗАКАЗА -->
+                    <button class="modal-order-btn" id="orderNowBtn">ЗАКАЗАТЬ</button>
+                </div>
             </div>
-            
-            <!-- Особенности (теги) -->
-            <div class="modal-features" id="modalFeatures"></div>
-            
-            <!-- КНОПКА ЗАКАЗА -->
-            <button class="modal-order-btn" id="orderNowBtn">ЗАКАЗАТЬ</button>
-          </div>
         </div>
-      </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
-
-
