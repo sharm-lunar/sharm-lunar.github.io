@@ -1,4 +1,4 @@
-/* ВАШИ РАБОТЫ С ПОДРОБНОЙ ИНФОРМАЦИЕЙ */
+// ВАШИ РАБОТЫ С ПОДРОБНОЙ ИНФОРМАЦИЕЙ
 const worksData = [
     // ========== КОНТЕЙНЕРНЫЕ СВЕЧИ (4 шт) ==========
     { 
@@ -397,14 +397,15 @@ function initModal() {
     });
 }
 
-
-// КНОПКА ЗАКАЗА
+// КНОПКА ЗАКАЗА - ИСПРАВЛЕНА
 function initOrderButton() {
     const orderBtn = document.getElementById('orderNowBtn');
     if (orderBtn) {
         orderBtn.addEventListener('click', function() {
-            // Открываем чат с параметром direct
-            window.location.href = 'https://t.me/charm_lunar?direct';
+            const modalTitle = document.getElementById('modalTitle').textContent;
+            const modalPrice = document.getElementById('modalPrice').textContent;
+            const message = encodeURIComponent(`Здравствуйте! Хочу заказать: ${modalTitle} (${modalPrice})`);
+            window.open(`https://t.me/charm_lunar?text=${message}`, '_blank');
         });
     }
 }
