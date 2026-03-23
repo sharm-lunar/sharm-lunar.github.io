@@ -26,30 +26,17 @@
         </div>
     </header>
 
-    <!-- ГЕРОЙ С АДАПТИВНЫМ ИЗОБРАЖЕНИЕМ -->
+    <!-- ГЕРОЙ С ОДНИМ ИЗОБРАЖЕНИЕМ И ЛОГОТИПОМ -->
     <section class="hero" id="hero">
         <div class="hero-bg">
-            <picture>
-                <!-- Мобильные устройства (до 480px) -->
-                <source 
-                    media="(max-width: 480px)" 
-                    srcset="images/Hero_image_mobile.png"
-                >
-                <!-- Планшеты (481px - 1024px) -->
-                <source 
-                    media="(max-width: 1024px)" 
-                    srcset="images/Hero_image_table.png"
-                >
-                <!-- Десктопы (1025px и выше) и фолбэк для старых браузеров -->
-                <img 
-                    src="images/Hero_image.png" 
-                    alt="LUNA HOMEMADE - ручная работа, свечи и гипсовые изделия"
-                    class="hero-img"
-                    loading="eager"
-                    fetchpriority="high"
-                >
-            </picture>
+            <img src="./images/Hero_image.JPG" alt="LUNA HOMEMADE" class="hero-img">
         </div>
+        
+        <!-- ЛОГОТИП ОДИН ДЛЯ ВСЕХ УСТРОЙСТВ -->
+        <div class="hero-logo">
+            <img src="./assets/logo_white.png" alt="LUNA HOMEMADE" class="hero-logo-img">
+        </div>
+        
         <div class="hero-content">
             <a href="#works" class="btn">СМОТРЕТЬ КАТАЛОГ</a>
         </div>
@@ -79,6 +66,9 @@
             <div class="portfolio-grid" id="works-grid"></div>
         </div>
     </section>
+
+    <!-- РАЗДЕЛИТЕЛЬ ПОСЛЕ РАБОТ -->
+    <div class="section-divider"></div>
 
     <!-- О СЕБЕ -->
     <section id="about" class="section about-bg">
@@ -119,6 +109,9 @@
             </div>
         </div>
     </section>
+
+    <!-- РАЗДЕЛИТЕЛЬ ПОСЛЕ БЛОКА О СЕБЕ -->
+    <div class="section-divider"></div>
 
     <!-- ПРЕИМУЩЕСТВА -->
     <section class="section" aria-labelledby="benefits-heading">
