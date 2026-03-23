@@ -682,6 +682,44 @@ h2::after {
    transform: translateY(0);
 }
 
+/* ========== STICKY КНОПКА ДЛЯ МОБИЛЬНЫХ ========== */
+@media (max-width: 768px) {
+   .modal-info {
+       display: flex;
+       flex-direction: column;
+   }
+   
+   .modal-features {
+       flex: 1;
+   }
+   
+   .modal-order-btn {
+       position: sticky;
+       bottom: 10px;
+       margin-top: 20px;
+       padding: 14px 20px;
+       background-color: #8b7a6b;
+       color: white;
+       border-radius: 40px;
+       font-weight: 600;
+       font-size: 1rem;
+       width: 100%;
+       border: none;
+       cursor: pointer;
+       box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+       transition: all 0.3s ease;
+   }
+   
+   .modal-order-btn:hover {
+       background-color: #6b5d51;
+       transform: translateY(-2px);
+   }
+   
+   .modal-order-btn:active {
+       transform: translateY(0);
+   }
+}
+
 /* Дополнительные адаптации */
 @media (max-width: 480px) {
    .nav a {
@@ -695,6 +733,10 @@ h2::after {
    .modal-features span {
        white-space: normal;
        text-align: center;
+   }
+   
+   .modal-content {
+       padding: 15px;
    }
 }
 
