@@ -397,7 +397,7 @@ function initModal() {
     });
 }
 
-// КНОПКА ЗАКАЗА - ИСПРАВЛЕНА
+// КНОПКА ЗАКАЗА
 function initOrderButton() {
     const orderBtn = document.getElementById('orderNowBtn');
     if (orderBtn) {
